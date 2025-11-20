@@ -3,7 +3,7 @@
  * العقود والأنواع المشتركة بين Frontend و Backend
  * 
  * @module @semop/shared-contracts
- * @version 0.2.0
+ * @version 0.3.0
  * @date 2025-11-20
  */
 
@@ -41,3 +41,8 @@ export * from './dtos/roles/create-role.dto';
 // Permission DTOs
 // ============================================================================
 export * from './dtos/permissions/create-permission.dto';
+
+// ============================================================================
+// Accounting DTOs
+// ============================================================================
+export * from './dtos/accounting';
