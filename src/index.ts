@@ -46,3 +46,22 @@ export * from './dtos/permissions/create-permission.dto';
 // Accounting DTOs
 // ============================================================================
 export * from './dtos/accounting';
+
+// ============================================
+// HR DTOs
+// ============================================
+
+// Employee DTOs
+export * from './dtos/hr/employees/employee.dto';
+
+// Attendance DTOs
+export * from './dtos/hr/attendance/attendance.dto';
+
+// Leave DTOs
+export * from './dtos/hr/leaves/leave.dto';
+
+// Payroll DTOs
+export * from './dtos/hr/payroll/payroll.dto';
+
+// Deductions & Benefits DTOs
+export * from './dtos/hr/deductions-benefits/deductions-benefits.dto';
