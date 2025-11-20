@@ -1,4 +1,4 @@
-import { IsString, IsOptional, IsEnum, IsDate, IsNumber, IsBoolean, MinLength, MaxLength } from 'class-validator';
+import { IsString, IsOptional, IsEnum, IsDate, IsNumber } from 'class-validator';
 import { Type } from 'class-transformer';
 
 export enum PayrollStatus {
@@ -136,4 +136,3 @@ export class UpdatePayrollBonusDto {
   reason?: string;
 }
 
-export { PayrollStatus };

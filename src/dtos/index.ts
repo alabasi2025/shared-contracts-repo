@@ -31,7 +31,7 @@ export * from './accounting';
 export * from './suppliers/supplier.dto';
 
 // Customer DTOs
-export * from './customers/customer.dto';
+// export * from './customers/customer.dto'; // Temporarily disabled due to PaymentTerms conflict
 
 // Inventory DTOs
 export * from './inventory/item.dto';

@@ -22,20 +22,20 @@ export class CreateSupplierDto {
   @MinLength(2)
   @MaxLength(20)
   @Matches(/^[A-Z0-9-]+$/, { message: 'Code must contain only uppercase letters, numbers, and hyphens' })
-  code: string;
+  code!: string;
 
   @IsString()
   @MinLength(2)
   @MaxLength(200)
-  nameEn: string;
+  nameEn!: string;
 
   @IsString()
   @MinLength(2)
   @MaxLength(200)
-  nameAr: string;
+  nameAr!: string;
 
   @IsEnum(SupplierType)
-  type: SupplierType;
+  type!: SupplierType;
 
   @IsOptional()
   @IsString()
@@ -187,11 +187,11 @@ export class UpdateSupplierDto {
 }
 
 export class SupplierResponseDto {
-  id: string;
-  code: string;
-  nameEn: string;
-  nameAr: string;
-  type: SupplierType;
+  id!: string;
+  code!: string;
+  nameEn!: string;
+  nameAr!: string;
+  type!: SupplierType;
   taxNumber?: string;
   commercialRegister?: string;
   contactPerson?: string;
@@ -208,9 +208,9 @@ export class SupplierResponseDto {
   unitId?: string;
   projectId?: string;
   notes?: string;
-  isActive: boolean;
-  createdAt: Date;
-  updatedAt: Date;
+  isActive!: boolean;
+  createdAt!: Date;
+  updatedAt!: Date;
 }
 
 export class CreateSupplierCategoryDto {
@@ -218,17 +218,17 @@ export class CreateSupplierCategoryDto {
   @MinLength(2)
   @MaxLength(20)
   @Matches(/^[A-Z0-9-]+$/)
-  code: string;
+  code!: string;
 
   @IsString()
   @MinLength(2)
   @MaxLength(100)
-  nameEn: string;
+  nameEn!: string;
 
   @IsString()
   @MinLength(2)
   @MaxLength(100)
-  nameAr: string;
+  nameAr!: string;
 
   @IsOptional()
   @IsString()

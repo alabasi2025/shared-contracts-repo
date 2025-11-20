@@ -3,8 +3,7 @@
  * @version 0.4.0
  */
 
-import { IsString, IsNumber, IsOptional, IsBoolean, IsUUID, MinLength, MaxLength, Matches, IsEnum, Min, IsArray, ValidateNested } from 'class-validator';
-import { Type } from 'class-transformer';
+import { IsString, IsNumber, IsOptional, IsBoolean, IsUUID, MinLength, MaxLength, Matches, IsEnum, Min } from 'class-validator';
 
 export enum ItemType {
   GOODS = 'GOODS',
@@ -27,23 +26,23 @@ export class CreateItemDto {
   @MinLength(2, { message: 'Item code must be at least 2 characters' })
   @MaxLength(20, { message: 'Item code must not exceed 20 characters' })
   @Matches(/^[A-Z0-9-]+$/, { message: 'Item code must contain only uppercase letters, numbers, and hyphens' })
-  code: string;
+  code!: string;
 
   @IsString()
   @MinLength(2, { message: 'Item name (English) must be at least 2 characters' })
   @MaxLength(200, { message: 'Item name (English) must not exceed 200 characters' })
-  nameEn: string;
+  nameEn!: string;
 
   @IsString()
   @MinLength(2, { message: 'Item name (Arabic) must be at least 2 characters' })
   @MaxLength(200, { message: 'Item name (Arabic) must not exceed 200 characters' })
-  nameAr: string;
+  nameAr!: string;
 
   @IsEnum(ItemType, { message: 'Item type must be one of: GOODS, SERVICE, ASSET' })
-  type: ItemType;
+  type!: ItemType;
 
   @IsEnum(UnitOfMeasure, { message: 'Unit of measure must be valid' })
-  unitOfMeasure: UnitOfMeasure;
+  unitOfMeasure!: UnitOfMeasure;
 
   @IsOptional()
   @IsString()
@@ -61,13 +60,13 @@ export class CreateItemDto {
   description?: string;
 
   @IsBoolean({ message: 'isStockable must be a boolean value' })
-  isStockable: boolean;
+  isStockable!: boolean;
 
   @IsBoolean({ message: 'isPurchasable must be a boolean value' })
-  isPurchasable: boolean;
+  isPurchasable!: boolean;
 
   @IsBoolean({ message: 'isSellable must be a boolean value' })
-  isSellable: boolean;
+  isSellable!: boolean;
 
   @IsOptional()
   @IsNumber({}, { message: 'Cost price must be a valid number' })
@@ -228,18 +227,18 @@ export class UpdateItemDto {
 }
 
 export class ItemResponseDto {
-  id: string;
-  code: string;
-  nameEn: string;
-  nameAr: string;
-  type: ItemType;
-  unitOfMeasure: UnitOfMeasure;
+  id!: string;
+  code!: string;
+  nameEn!: string;
+  nameAr!: string;
+  type!: ItemType;
+  unitOfMeasure!: UnitOfMeasure;
   barcode?: string;
   sku?: string;
   description?: string;
-  isStockable: boolean;
-  isPurchasable: boolean;
-  isSellable: boolean;
+  isStockable!: boolean;
+  isPurchasable!: boolean;
+  isSellable!: boolean;
   costPrice?: number;
   sellingPrice?: number;
   minSellingPrice?: number;
@@ -253,9 +252,9 @@ export class ItemResponseDto {
   unitId?: string;
   projectId?: string;
   notes?: string;
-  isActive: boolean;
-  createdAt: Date;
-  updatedAt: Date;
+  isActive!: boolean;
+  createdAt!: Date;
+  updatedAt!: Date;
 }
 
 export class CreateItemCategoryDto {
@@ -263,17 +262,17 @@ export class CreateItemCategoryDto {
   @MinLength(2, { message: 'Category code must be at least 2 characters' })
   @MaxLength(20, { message: 'Category code must not exceed 20 characters' })
   @Matches(/^[A-Z0-9-]+$/, { message: 'Category code must contain only uppercase letters, numbers, and hyphens' })
-  code: string;
+  code!: string;
 
   @IsString()
   @MinLength(2, { message: 'Category name (English) must be at least 2 characters' })
   @MaxLength(100, { message: 'Category name (English) must not exceed 100 characters' })
-  nameEn: string;
+  nameEn!: string;
 
   @IsString()
   @MinLength(2, { message: 'Category name (Arabic) must be at least 2 characters' })
   @MaxLength(100, { message: 'Category name (Arabic) must not exceed 100 characters' })
-  nameAr: string;
+  nameAr!: string;
 
   @IsOptional()
   @IsUUID('4', { message: 'Parent category ID must be a valid UUID' })
@@ -317,17 +316,17 @@ export class CreateWarehouseDto {
   @MinLength(2, { message: 'Warehouse code must be at least 2 characters' })
   @MaxLength(20, { message: 'Warehouse code must not exceed 20 characters' })
   @Matches(/^[A-Z0-9-]+$/, { message: 'Warehouse code must contain only uppercase letters, numbers, and hyphens' })
-  code: string;
+  code!: string;
 
   @IsString()
   @MinLength(2, { message: 'Warehouse name (English) must be at least 2 characters' })
   @MaxLength(200, { message: 'Warehouse name (English) must not exceed 200 characters' })
-  nameEn: string;
+  nameEn!: string;
 
   @IsString()
   @MinLength(2, { message: 'Warehouse name (Arabic) must be at least 2 characters' })
   @MaxLength(200, { message: 'Warehouse name (Arabic) must not exceed 200 characters' })
-  nameAr: string;
+  nameAr!: string;
 
   @IsOptional()
   @IsString()
@@ -401,10 +400,10 @@ export class UpdateWarehouseDto {
 }
 
 export class WarehouseResponseDto {
-  id: string;
-  code: string;
-  nameEn: string;
-  nameAr: string;
+  id!: string;
+  code!: string;
+  nameEn!: string;
+  nameAr!: string;
   location?: string;
   manager?: string;
   phone?: string;
@@ -412,7 +411,7 @@ export class WarehouseResponseDto {
   unitId?: string;
   projectId?: string;
   notes?: string;
-  isActive: boolean;
-  createdAt: Date;
-  updatedAt: Date;
+  isActive!: boolean;
+  createdAt!: Date;
+  updatedAt!: Date;
 }

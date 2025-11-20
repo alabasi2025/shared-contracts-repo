@@ -3,7 +3,7 @@
  * @version 0.4.0
  */
 
-import { IsString, IsNumber, IsDate, IsOptional, IsUUID, IsArray, ValidateNested, Min, MaxLength, IsEnum } from 'class-validator';
+import { IsString, IsNumber, IsDate, IsOptional, IsUUID, IsArray, ValidateNested, Min, MaxLength } from 'class-validator';
 import { Type } from 'class-transformer';
 
 export enum PurchaseOrderStatus {
@@ -29,15 +29,15 @@ export enum PurchaseReturnStatus {
 
 export class PurchaseOrderLineDto {
   @IsUUID('4', { message: 'Item ID must be a valid UUID' })
-  itemId: string;
+  itemId!: string;
 
   @IsNumber({}, { message: 'Quantity must be a valid number' })
   @Min(0.01, { message: 'Quantity must be greater than zero' })
-  quantity: number;
+  quantity!: number;
 
   @IsNumber({}, { message: 'Unit price must be a valid number' })
   @Min(0, { message: 'Unit price cannot be negative' })
-  unitPrice: number;
+  unitPrice!: number;
 
   @IsOptional()
   @IsNumber({}, { message: 'Tax rate must be a valid number' })
@@ -57,11 +57,11 @@ export class PurchaseOrderLineDto {
 
 export class CreatePurchaseOrderDto {
   @IsUUID('4', { message: 'Supplier ID must be a valid UUID' })
-  supplierId: string;
+  supplierId!: string;
 
   @IsDate({ message: 'Order date must be a valid date' })
   @Type(() => Date)
-  orderDate: Date;
+  orderDate!: Date;
 
   @IsOptional()
   @IsDate({ message: 'Expected delivery date must be a valid date' })
@@ -71,7 +71,7 @@ export class CreatePurchaseOrderDto {
   @IsArray({ message: 'Lines must be an array' })
   @ValidateNested({ each: true })
   @Type(() => PurchaseOrderLineDto)
-  lines: PurchaseOrderLineDto[];
+  lines!: PurchaseOrderLineDto[];
 
   @IsOptional()
   @IsUUID('4', { message: 'Holding ID must be a valid UUID' })
@@ -105,18 +105,18 @@ export class UpdatePurchaseOrderDto {
 
 export class PurchaseInvoiceLineDto {
   @IsUUID('4', { message: 'Item ID must be a valid UUID' })
-  itemId: string;
+  itemId!: string;
 
   @IsUUID('4', { message: 'Warehouse ID must be a valid UUID' })
-  warehouseId: string;
+  warehouseId!: string;
 
   @IsNumber({}, { message: 'Quantity must be a valid number' })
   @Min(0.01, { message: 'Quantity must be greater than zero' })
-  quantity: number;
+  quantity!: number;
 
   @IsNumber({}, { message: 'Unit price must be a valid number' })
   @Min(0, { message: 'Unit price cannot be negative' })
-  unitPrice: number;
+  unitPrice!: number;
 
   @IsOptional()
   @IsNumber({}, { message: 'Tax rate must be a valid number' })
@@ -136,11 +136,11 @@ export class PurchaseInvoiceLineDto {
 
 export class CreatePurchaseInvoiceDto {
   @IsUUID('4', { message: 'Supplier ID must be a valid UUID' })
-  supplierId: string;
+  supplierId!: string;
 
   @IsDate({ message: 'Invoice date must be a valid date' })
   @Type(() => Date)
-  invoiceDate: Date;
+  invoiceDate!: Date;
 
   @IsOptional()
   @IsDate({ message: 'Due date must be a valid date' })
@@ -154,7 +154,7 @@ export class CreatePurchaseInvoiceDto {
   @IsArray({ message: 'Lines must be an array' })
   @ValidateNested({ each: true })
   @Type(() => PurchaseInvoiceLineDto)
-  lines: PurchaseInvoiceLineDto[];
+  lines!: PurchaseInvoiceLineDto[];
 
   @IsOptional()
   @IsUUID('4', { message: 'Holding ID must be a valid UUID' })
@@ -188,18 +188,18 @@ export class UpdatePurchaseInvoiceDto {
 
 export class PurchaseReturnLineDto {
   @IsUUID('4', { message: 'Item ID must be a valid UUID' })
-  itemId: string;
+  itemId!: string;
 
   @IsUUID('4', { message: 'Warehouse ID must be a valid UUID' })
-  warehouseId: string;
+  warehouseId!: string;
 
   @IsNumber({}, { message: 'Quantity must be a valid number' })
   @Min(0.01, { message: 'Quantity must be greater than zero' })
-  quantity: number;
+  quantity!: number;
 
   @IsNumber({}, { message: 'Unit price must be a valid number' })
   @Min(0, { message: 'Unit price cannot be negative' })
-  unitPrice: number;
+  unitPrice!: number;
 
   @IsOptional()
   @IsNumber({}, { message: 'Tax rate must be a valid number' })
@@ -214,11 +214,11 @@ export class PurchaseReturnLineDto {
 
 export class CreatePurchaseReturnDto {
   @IsUUID('4', { message: 'Supplier ID must be a valid UUID' })
-  supplierId: string;
+  supplierId!: string;
 
   @IsDate({ message: 'Return date must be a valid date' })
   @Type(() => Date)
-  returnDate: Date;
+  returnDate!: Date;
 
   @IsOptional()
   @IsUUID('4', { message: 'Purchase invoice ID must be a valid UUID' })
@@ -227,7 +227,7 @@ export class CreatePurchaseReturnDto {
   @IsArray({ message: 'Lines must be an array' })
   @ValidateNested({ each: true })
   @Type(() => PurchaseReturnLineDto)
-  lines: PurchaseReturnLineDto[];
+  lines!: PurchaseReturnLineDto[];
 
   @IsOptional()
   @IsUUID('4', { message: 'Holding ID must be a valid UUID' })
@@ -255,40 +255,40 @@ export class UpdatePurchaseReturnDto {
 }
 
 export class PurchaseOrderResponseDto {
-  id: string;
-  orderNumber: string;
-  orderDate: Date;
+  id!: string;
+  orderNumber!: string;
+  orderDate!: Date;
   expectedDeliveryDate?: Date;
-  status: PurchaseOrderStatus;
-  supplierId: string;
-  subtotal: number;
-  taxAmount: number;
-  discountAmount: number;
-  totalAmount: number;
+  status!: PurchaseOrderStatus;
+  supplierId!: string;
+  subtotal!: number;
+  taxAmount!: number;
+  discountAmount!: number;
+  totalAmount!: number;
   holdingId?: string;
   unitId?: string;
   projectId?: string;
   notes?: string;
   approvedAt?: Date;
   approvedBy?: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt!: Date;
+  updatedAt!: Date;
 }
 
 export class PurchaseInvoiceResponseDto {
-  id: string;
-  invoiceNumber: string;
-  invoiceDate: Date;
+  id!: string;
+  invoiceNumber!: string;
+  invoiceDate!: Date;
   dueDate?: Date;
-  status: PurchaseInvoiceStatus;
-  supplierId: string;
+  status!: PurchaseInvoiceStatus;
+  supplierId!: string;
   purchaseOrderId?: string;
-  subtotal: number;
-  taxAmount: number;
-  discountAmount: number;
-  totalAmount: number;
-  paidAmount: number;
-  remainingAmount: number;
+  subtotal!: number;
+  taxAmount!: number;
+  discountAmount!: number;
+  totalAmount!: number;
+  paidAmount!: number;
+  remainingAmount!: number;
   journalEntryId?: string;
   holdingId?: string;
   unitId?: string;
@@ -296,21 +296,21 @@ export class PurchaseInvoiceResponseDto {
   notes?: string;
   postedAt?: Date;
   postedBy?: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt!: Date;
+  updatedAt!: Date;
 }
 
 export class PurchaseReturnResponseDto {
-  id: string;
-  returnNumber: string;
-  returnDate: Date;
-  status: PurchaseReturnStatus;
-  supplierId: string;
+  id!: string;
+  returnNumber!: string;
+  returnDate!: Date;
+  status!: PurchaseReturnStatus;
+  supplierId!: string;
   purchaseInvoiceId?: string;
-  subtotal: number;
-  taxAmount: number;
-  totalAmount: number;
-  refundedAmount: number;
+  subtotal!: number;
+  taxAmount!: number;
+  totalAmount!: number;
+  refundedAmount!: number;
   journalEntryId?: string;
   holdingId?: string;
   unitId?: string;
@@ -318,6 +318,6 @@ export class PurchaseReturnResponseDto {
   notes?: string;
   postedAt?: Date;
   postedBy?: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt!: Date;
+  updatedAt!: Date;
 }

@@ -137,4 +137,3 @@ export class UpdateLeaveRequestDto {
   reason?: string;
 }
 
-export { LeaveCategory, ApprovalStatus };

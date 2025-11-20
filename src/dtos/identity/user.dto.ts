@@ -8,34 +8,34 @@
 
 import { UserRole } from '../../enums/user-role.enum';
 
-export interface UserDto {
+export class UserDto {
   /** معرف المستخدم الفريد (UUID) */
-  id: string;
+  id!: string;
 
   /** البريد الإلكتروني (يستخدم لتسجيل الدخول) */
-  email: string;
+  email!: string;
 
   /** الاسم الأول */
-  firstName: string;
+  firstName!: string;
 
   /** الاسم الأخير */
-  lastName: string;
+  lastName!: string;
 
   /** دور المستخدم في النظام */
-  role: UserRole;
+  role!: UserRole;
 
   /** معرف الكيان الذي ينتمي إليه المستخدم (Holding/Unit/Project) */
-  entityId: string;
+  entityId!: string;
 
   /** نوع الكيان (holding, unit, project) */
-  entityType: 'holding' | 'unit' | 'project';
+  entityType!: 'holding' | 'unit' | 'project';
 
   /** هل الحساب نشط؟ */
-  isActive: boolean;
+  isActive!: boolean;
 
   /** تاريخ إنشاء الحساب */
-  createdAt: Date;
+  createdAt!: Date;
 
   /** تاريخ آخر تحديث */
-  updatedAt: Date;
+  updatedAt!: Date;
 }

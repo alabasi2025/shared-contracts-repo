@@ -27,11 +27,11 @@ export class CreateUserDto {
   @Matches(/^[a-zA-Z0-9_-]+$/, {
     message: 'Username can only contain letters, numbers, underscores and hyphens',
   })
-  username: string;
+  username!: string;
 
   @IsNotEmpty({ message: 'Email is required' })
   @IsEmail({}, { message: 'Email must be a valid email address' })
-  email: string;
+  email!: string;
 
   @IsNotEmpty({ message: 'Password is required' })
   @IsString({ message: 'Password must be a string' })
@@ -40,19 +40,19 @@ export class CreateUserDto {
     message:
       'Password must contain at least one uppercase letter, one lowercase letter, one number and one special character',
   })
-  password: string;
+  password!: string;
 
   @IsNotEmpty({ message: 'First name is required' })
   @IsString({ message: 'First name must be a string' })
   @MinLength(2, { message: 'First name must be at least 2 characters long' })
   @MaxLength(50, { message: 'First name must not exceed 50 characters' })
-  firstName: string;
+  firstName!: string;
 
   @IsNotEmpty({ message: 'Last name is required' })
   @IsString({ message: 'Last name must be a string' })
   @MinLength(2, { message: 'Last name must be at least 2 characters long' })
   @MaxLength(50, { message: 'Last name must not exceed 50 characters' })
-  lastName: string;
+  lastName!: string;
 
   @IsOptional()
   @IsString({ message: 'Phone must be a string' })
@@ -131,7 +131,7 @@ export class UpdateUserDto {
 export class ChangePasswordDto {
   @IsNotEmpty({ message: 'Old password is required' })
   @IsString({ message: 'Old password must be a string' })
-  oldPassword: string;
+  oldPassword!: string;
 
   @IsNotEmpty({ message: 'New password is required' })
   @IsString({ message: 'New password must be a string' })
@@ -140,7 +140,7 @@ export class ChangePasswordDto {
     message:
       'New password must contain at least one uppercase letter, one lowercase letter, one number and one special character',
   })
-  newPassword: string;
+  newPassword!: string;
 }
 
 export class ResetPasswordDto {
@@ -151,25 +151,25 @@ export class ResetPasswordDto {
     message:
       'New password must contain at least one uppercase letter, one lowercase letter, one number and one special character',
   })
-  newPassword: string;
+  newPassword!: string;
 }
 
 export class UserResponseDto {
-  id: string;
-  username: string;
-  email: string;
-  firstName: string;
-  lastName: string;
+  id!: string;
+  username!: string;
+  email!: string;
+  firstName!: string;
+  lastName!: string;
   phone?: string;
   avatar?: string;
-  isActive: boolean;
-  isEmailVerified: boolean;
+  isActive!: boolean;
+  isEmailVerified!: boolean;
   lastLoginAt?: Date;
   holdingId?: string;
   unitId?: string;
   projectId?: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt!: Date;
+  updatedAt!: Date;
   createdBy?: string;
   updatedBy?: string;
 }

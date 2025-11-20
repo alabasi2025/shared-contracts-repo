@@ -175,4 +175,3 @@ export class UpdateOvertimeRequestDto {
   reason?: string;
 }
 
-export { AttendanceStatus, DayType };

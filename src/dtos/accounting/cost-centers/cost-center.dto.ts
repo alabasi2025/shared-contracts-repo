@@ -26,19 +26,19 @@ export class CreateCostCenterDto {
   @Matches(/^[A-Z0-9-]+$/, {
     message: 'Code can only contain uppercase letters, numbers, and hyphens',
   })
-  code: string;
+  code!: string;
 
   @IsNotEmpty({ message: 'Arabic name is required' })
   @IsString({ message: 'Arabic name must be a string' })
   @MinLength(2, { message: 'Arabic name must be at least 2 characters long' })
   @MaxLength(200, { message: 'Arabic name must not exceed 200 characters' })
-  nameAr: string;
+  nameAr!: string;
 
   @IsNotEmpty({ message: 'English name is required' })
   @IsString({ message: 'English name must be a string' })
   @MinLength(2, { message: 'English name must be at least 2 characters long' })
   @MaxLength(200, { message: 'English name must not exceed 200 characters' })
-  nameEn: string;
+  nameEn!: string;
 
   @IsOptional()
   @IsString({ message: 'Description must be a string' })
@@ -95,18 +95,18 @@ export class UpdateCostCenterDto {
 }
 
 export class CostCenterResponseDto {
-  id: string;
-  code: string;
-  nameAr: string;
-  nameEn: string;
+  id!: string;
+  code!: string;
+  nameAr!: string;
+  nameEn!: string;
   description?: string;
-  isActive: boolean;
+  isActive!: boolean;
   parentId?: string;
   holdingId?: string;
   unitId?: string;
   projectId?: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt!: Date;
+  updatedAt!: Date;
   createdBy?: string;
   updatedBy?: string;
 }

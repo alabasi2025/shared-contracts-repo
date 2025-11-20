@@ -12,7 +12,7 @@ import {
   IsString,
   IsOptional,
   IsBoolean,
-  IsEnum,
+  
   IsUUID,
   IsDate,
   MinLength,
@@ -40,29 +40,29 @@ export class CreateFiscalYearDto {
   @Matches(/^[A-Z0-9-]+$/, {
     message: 'Code can only contain uppercase letters, numbers, and hyphens',
   })
-  code: string;
+  code!: string;
 
   @IsNotEmpty({ message: 'Arabic name is required' })
   @IsString({ message: 'Arabic name must be a string' })
   @MinLength(2, { message: 'Arabic name must be at least 2 characters long' })
   @MaxLength(200, { message: 'Arabic name must not exceed 200 characters' })
-  nameAr: string;
+  nameAr!: string;
 
   @IsNotEmpty({ message: 'English name is required' })
   @IsString({ message: 'English name must be a string' })
   @MinLength(2, { message: 'English name must be at least 2 characters long' })
   @MaxLength(200, { message: 'English name must not exceed 200 characters' })
-  nameEn: string;
+  nameEn!: string;
 
   @IsNotEmpty({ message: 'Start date is required' })
   @IsDate({ message: 'Start date must be a valid date' })
   @Type(() => Date)
-  startDate: Date;
+  startDate!: Date;
 
   @IsNotEmpty({ message: 'End date is required' })
   @IsDate({ message: 'End date must be a valid date' })
   @Type(() => Date)
-  endDate: Date;
+  endDate!: Date;
 
   @IsOptional()
   @IsBoolean({ message: 'isCurrent must be a boolean' })
@@ -107,30 +107,30 @@ export class UpdateFiscalYearDto {
 }
 
 export class FiscalPeriodResponseDto {
-  id: string;
-  fiscalYearId: string;
-  periodNumber: number;
-  nameAr: string;
-  nameEn: string;
-  startDate: Date;
-  endDate: Date;
-  status: FiscalPeriodStatus;
-  createdAt: Date;
-  updatedAt: Date;
+  id!: string;
+  fiscalYearId!: string;
+  periodNumber!: number;
+  nameAr!: string;
+  nameEn!: string;
+  startDate!: Date;
+  endDate!: Date;
+  status!: FiscalPeriodStatus;
+  createdAt!: Date;
+  updatedAt!: Date;
 }
 
 export class FiscalYearResponseDto {
-  id: string;
-  code: string;
-  nameAr: string;
-  nameEn: string;
-  startDate: Date;
-  endDate: Date;
-  status: FiscalYearStatus;
-  isCurrent: boolean;
+  id!: string;
+  code!: string;
+  nameAr!: string;
+  nameEn!: string;
+  startDate!: Date;
+  endDate!: Date;
+  status!: FiscalYearStatus;
+  isCurrent!: boolean;
   holdingId?: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt!: Date;
+  updatedAt!: Date;
   createdBy?: string;
   updatedBy?: string;
   periods?: FiscalPeriodResponseDto[];

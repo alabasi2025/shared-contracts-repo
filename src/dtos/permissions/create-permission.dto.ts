@@ -24,19 +24,19 @@ export class CreatePermissionDto {
   @Matches(/^[A-Z0-9_]+$/, {
     message: 'Code can only contain uppercase letters, numbers and underscores',
   })
-  code: string;
+  code!: string;
 
   @IsNotEmpty({ message: 'Arabic name is required' })
   @IsString({ message: 'Arabic name must be a string' })
   @MinLength(2, { message: 'Arabic name must be at least 2 characters long' })
   @MaxLength(100, { message: 'Arabic name must not exceed 100 characters' })
-  nameAr: string;
+  nameAr!: string;
 
   @IsNotEmpty({ message: 'English name is required' })
   @IsString({ message: 'English name must be a string' })
   @MinLength(2, { message: 'English name must be at least 2 characters long' })
   @MaxLength(100, { message: 'English name must not exceed 100 characters' })
-  nameEn: string;
+  nameEn!: string;
 
   @IsOptional()
   @IsString({ message: 'Description must be a string' })
@@ -50,7 +50,7 @@ export class CreatePermissionDto {
   @Matches(/^[a-z_]+$/, {
     message: 'Module can only contain lowercase letters and underscores',
   })
-  module: string;
+  module!: string;
 
   @IsNotEmpty({ message: 'Action is required' })
   @IsString({ message: 'Action must be a string' })
@@ -59,7 +59,7 @@ export class CreatePermissionDto {
   @Matches(/^[a-z_]+$/, {
     message: 'Action can only contain lowercase letters and underscores',
   })
-  action: string;
+  action!: string;
 }
 
 export class UpdatePermissionDto {
@@ -109,13 +109,13 @@ export class UpdatePermissionDto {
 }
 
 export class PermissionResponseDto {
-  id: string;
-  code: string;
-  nameAr: string;
-  nameEn: string;
+  id!: string;
+  code!: string;
+  nameAr!: string;
+  nameEn!: string;
   description?: string;
-  module: string;
-  action: string;
-  createdAt: Date;
-  updatedAt: Date;
+  module!: string;
+  action!: string;
+  createdAt!: Date;
+  updatedAt!: Date;
 }
