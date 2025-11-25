@@ -44,5 +44,6 @@ export * from './sales/sales.dto';
 
 // Stock Movements DTOs
 export * from './stock-movements';
-movements';
-ments';
+
+// Sales Orders DTOs
+export * from './sales-orders';
