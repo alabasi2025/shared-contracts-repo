@@ -1,10 +1,17 @@
 /**
- * SEMOP - Shared Contracts
- * العقود والأنواع المشتركة بين Frontend و Backend
+ * PHASE-11: Complete Contracts Exports
+ * COMPONENT: Main Index
+ * IMPACT: Critical
  * 
- * @module @semop/shared-contracts
- * @version 0.3.0
- * @date 2025-11-20
+ * Changes:
+ * - Added all missing exports for DTOs
+ * - Organized by domain/module
+ * 
+ * Date: 2025-12-03
+ * Author: Development Team
+ * 
+ * @module @semop/contracts
+ * @version 0.1.2
  */
 
 // ============================================================================
@@ -13,9 +20,10 @@
 export * from './dtos/auth/login.dto';
 
 // ============================================================================
-// User DTOs
+// User & Identity DTOs
 // ============================================================================
 export * from './dtos/users/create-user.dto';
+export * from './dtos/identity/user.dto';
 
 // ============================================================================
 // Holding DTOs
@@ -43,25 +51,59 @@ export * from './dtos/roles/create-role.dto';
 export * from './dtos/permissions/create-permission.dto';
 
 // ============================================================================
+// Role-Permission DTOs
+// ============================================================================
+export * from './dtos/role-permissions/role-permissions.dto';
+
+// ============================================================================
 // Accounting DTOs
 // ============================================================================
 export * from './dtos/accounting';
 
-// ============================================
+// ============================================================================
 // HR DTOs
-// ============================================
-
-// Employee DTOs
+// ============================================================================
 export * from './dtos/hr/employees/employee.dto';
-
-// Attendance DTOs
 export * from './dtos/hr/attendance/attendance.dto';
-
-// Leave DTOs
 export * from './dtos/hr/leaves/leave.dto';
-
-// Payroll DTOs
 export * from './dtos/hr/payroll/payroll.dto';
-
-// Deductions & Benefits DTOs
 export * from './dtos/hr/deductions-benefits/deductions-benefits.dto';
+
+// ============================================================================
+// OCMP - Genes DTOs
+// ============================================================================
+export * from './dtos/genes/genes.dto';
+export * from './dtos/genes/link-gene-sector.dto';
+export * from './dtos/genes/gene-dependency.dto';
+export * from './dtos/genes/gene-history.dto';
+export * from './dtos/genes/bulk-update.dto';
+export * from './dtos/genes/usage-report.dto';
+
+// ============================================================================
+// OCMP - Latitude Points DTOs
+// ============================================================================
+export * from './dtos/latitude-points/latitude-points.dto';
+
+// ============================================================================
+// Inventory DTOs
+// ============================================================================
+export * from './dtos/inventory/item.dto';
+
+// ============================================================================
+// Stock Movements DTOs
+// ============================================================================
+export * from './dtos/stock-movements/create-stock-movement.dto';
+export * from './dtos/stock-movements/stock-movement-response.dto';
+
+// ============================================================================
+// Purchasing DTOs
+// ============================================================================
+export * from './dtos/purchases/purchase.dto';
+export * from './dtos/suppliers/supplier.dto';
+
+// ============================================================================
+// Sales DTOs
+// ============================================================================
+export * from './dtos/sales/sales.dto';
+export * from './dtos/customers/customer.dto';
+export * from './dtos/customer-contacts/customer-contact.dto';
