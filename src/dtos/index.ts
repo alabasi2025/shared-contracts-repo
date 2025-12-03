@@ -1,6 +1,7 @@
 /**
  * SEMOP - Shared Contracts - DTOs Index
- * @version 0.4.0
+ * @version 0.4.1
+ * PHASE-1.1.1: Fixed export conflicts
  */
 
 // Auth DTOs
@@ -8,6 +9,9 @@ export * from './auth/login.dto';
 
 // User DTOs
 export * from './users/create-user.dto';
+
+// Identity DTOs
+export * from './identity/user.dto';
 
 // Holdings DTOs
 export * from './holdings/create-holding.dto';
@@ -39,11 +43,44 @@ export * from './inventory/item.dto';
 // Purchase DTOs
 export * from './purchases/purchase.dto';
 
-// Sales DTOs
+// Sales DTOs - Using sales.dto.ts (comprehensive)
 export * from './sales/sales.dto';
 
 // Stock Movements DTOs
 export * from './stock-movements';
 
-// Sales Orders DTOs
-export * from './sales-orders';
+// Note: sales-orders is included in sales.dto.ts to avoid conflicts
+
+// Customer Contacts
+export * from './customer-contacts/customer-contact.dto';
+
+// Role Permissions
+export * from './role-permissions/role-permissions.dto';
+
+// Latitude Points
+export * from './latitude-points/latitude-points.dto';
+
+// Genes
+export * from './genes/genes.dto';
+export * from './genes/bulk-update.dto';
+export * from './genes/gene-dependency.dto';
+export * from './genes/gene-history.dto';
+export * from './genes/link-gene-sector.dto';
+export * from './genes/usage-report.dto';
+
+// Customer Contacts DTOs
+export * from './customer-contacts/customer-contact.dto';
+
+// Role Permissions DTOs
+export * from './role-permissions/role-permissions.dto';
+
+// Latitude Points DTOs
+export * from './latitude-points/latitude-points.dto';
+
+// Genes DTOs
+export * from './genes/genes.dto';
+export * from './genes/bulk-update.dto';
+export * from './genes/gene-dependency.dto';
+export * from './genes/gene-history.dto';
+export * from './genes/link-gene-sector.dto';
+export * from './genes/usage-report.dto';

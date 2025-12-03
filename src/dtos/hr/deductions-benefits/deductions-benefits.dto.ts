@@ -285,4 +285,3 @@ export class UpdateLoanRequestDto {
   reason?: string;
 }
 
-export { CalculationType, RecurrenceType, LoanStatus };

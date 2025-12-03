@@ -3,7 +3,7 @@
  * @version 0.4.0
  */
 
-import { IsString, IsNumber, IsDate, IsOptional, IsUUID, IsArray, ValidateNested, Min, MaxLength, IsEnum } from 'class-validator';
+import { IsString, IsNumber, IsDate, IsOptional, IsUUID, IsArray, ValidateNested, Min, MaxLength } from 'class-validator';
 import { Type } from 'class-transformer';
 
 export enum SalesOrderStatus {

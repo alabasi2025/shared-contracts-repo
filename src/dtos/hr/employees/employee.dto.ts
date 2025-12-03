@@ -476,4 +476,3 @@ export class UpdateEmployeeContractDto {
   terms?: string;
 }
 
-export { EmploymentType, EmploymentStatus, Gender, MaritalStatus };

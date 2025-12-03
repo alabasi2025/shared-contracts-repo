@@ -3,8 +3,8 @@
  * @version 0.4.0
  */
 
-import { IsString, IsNumber, IsOptional, IsBoolean, IsUUID, MinLength, MaxLength, Matches, IsEnum, Min, IsArray, ValidateNested } from 'class-validator';
-import { Type } from 'class-transformer';
+import { IsString, IsNumber, IsOptional, IsBoolean, IsUUID, MinLength, MaxLength, Matches, IsEnum, Min } from 'class-validator';
+
 
 export enum ItemType {
   GOODS = 'GOODS',

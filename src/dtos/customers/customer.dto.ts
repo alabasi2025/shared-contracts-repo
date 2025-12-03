@@ -1,3 +1,4 @@
+import { PaymentTerms } from '../suppliers/supplier.dto';
 /**
  * SEMOP - Customer DTOs
  * @version 0.4.0
@@ -10,12 +11,6 @@ export enum CustomerType {
   CORPORATE = 'CORPORATE',
 }
 
-export enum PaymentTerms {
-  CASH = 'CASH',
-  NET_30 = 'NET_30',
-  NET_60 = 'NET_60',
-  NET_90 = 'NET_90',
-}
 
 export class CreateCustomerDto {
   @IsString()
