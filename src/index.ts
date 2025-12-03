@@ -11,7 +11,7 @@
  * Author: Development Team
  * 
  * @module @semop/contracts
- * @version 0.1.2
+ * @version 0.1.4
  */
 
 // ============================================================================
@@ -107,3 +107,5 @@ export * from './dtos/suppliers/supplier.dto';
 export * from './dtos/sales/sales.dto';
 export * from './dtos/customers/customer.dto';
 export * from './dtos/customer-contacts/customer-contact.dto';
+
+
