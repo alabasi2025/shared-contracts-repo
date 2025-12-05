@@ -19,6 +19,7 @@ export interface JournalEntryTemplateLineDto {
   lineOrder: number;
   accountType: 'debit' | 'credit';
   accountId?: string;
+  accountCode?: string;
   accountPlaceholder?: string;
   amountSource: string;
   descriptionTemplate?: string;
@@ -38,6 +39,7 @@ export interface CreateJournalEntryTemplateLineDto {
   lineOrder: number;
   accountType: 'debit' | 'credit';
   accountId?: string;
+  accountCode?: string;
   accountPlaceholder?: string;
   amountSource: string;
   descriptionTemplate?: string;
@@ -57,6 +59,7 @@ export interface UpdateJournalEntryTemplateLineDto {
   lineOrder?: number;
   accountType?: 'debit' | 'credit';
   accountId?: string;
+  accountCode?: string;
   accountPlaceholder?: string;
   amountSource?: string;
   descriptionTemplate?: string;
