@@ -112,6 +112,9 @@ export class CreateJournalEntryDto {
   @ValidateNested({ each: true })
   @Type(() => CreateJournalEntryLineDto)
   lines: CreateJournalEntryLineDto[];
+  @IsOptional()
+  @IsUUID('4', { message: 'Smart Journal Entry ID must be a valid UUID' })
+  smartJournalEntryId?: string;
 }
 
 export class UpdateJournalEntryDto {
@@ -177,4 +180,5 @@ export class JournalEntryResponseDto {
   createdBy?: string;
   updatedBy?: string;
   lines?: JournalEntryLineResponseDto[];
+  smartJournalEntryId?: string;
 }
