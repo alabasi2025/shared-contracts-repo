@@ -8,3 +8,4 @@ export * from './automated-journal-entry.dto';
 export * from './smart-journal-entry-report-query.dto';
 export * from './smart-journal-entry-report-item.dto';
 export * from './smart-journal-entry-report-response.dto';
+export * from './smart-journal-entry-stats.dto';
