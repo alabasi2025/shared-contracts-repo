@@ -90,3 +90,7 @@ export * from './sales/sales-template.dto';
 
 // Templates DTOs
 export * from './templates';
+
+// Suggestions DTOs
+export * from './suggestions/suggestion-score.dto';
+export * from './suggestions/create-suggestion-score.dto';
