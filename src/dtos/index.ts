@@ -84,3 +84,13 @@ export * from './genes/gene-dependency.dto';
 export * from './genes/gene-history.dto';
 export * from './genes/link-gene-sector.dto';
 export * from './genes/usage-report.dto';
+
+// Sales Templates DTOs
+export * from './sales/sales-template.dto';
+
+// Templates DTOs
+export * from './templates';
+
+// Suggestions DTOs
+export * from './suggestions/suggestion-score.dto';
+export * from './suggestions/create-suggestion-score.dto';

@@ -1,9 +1,13 @@
 // PHASE-15: Smart Journal Entries System - Automated Journal Entry DTOs
 // This file contains DTOs for automated journal entries
 
+import { JournalEntryResponseDto } from '../journal-entries/journal-entry.dto';
+
 export interface AutomatedJournalEntryDto {
   id: string;
   journalEntryId: string;
+  // إضافة علاقة عكسية اختيارية للقيد الذكي
+  journalEntry?: JournalEntryResponseDto;
   sourceType: string;
   sourceId: string;
   templateId?: string;
