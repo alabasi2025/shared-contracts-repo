@@ -18,3 +18,6 @@ export * from './cost-centers/cost-center.dto';
 
 // Fiscal Year DTOs
 export * from './fiscal-years/fiscal-year.dto';
+
+// Smart Journal Entries DTOs
+export * from './smart-journal-entries';
