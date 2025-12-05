@@ -85,5 +85,8 @@ export * from './genes/gene-history.dto';
 export * from './genes/link-gene-sector.dto';
 export * from './genes/usage-report.dto';
 
+// Sales Templates DTOs
+export * from './sales/sales-template.dto';
+
 // Templates DTOs
 export * from './templates';
